@@ -6,12 +6,19 @@ using UnityEngine.UI;
 
 public class opening_navigation : MonoBehaviour {
 
-    private int slide_id;
+    static int size = 5;
+    public GameObject[] slides;
+    public int slide_id;
 
     // Use this for initialization
-	void Start () {
+    void Start () {
         slide_id = 0;
-	}
+        slides = new GameObject[size];
+        for (int i = 0; i < size; i++)
+        {
+            slides[i] = GameObject.FindWithTag("cutscene_slide");
+        }
+    }
 
     public void next_scene()
     {
@@ -24,10 +31,15 @@ public class opening_navigation : MonoBehaviour {
         {
             next_scene();
         }
-        /*else if (Input.GetKey("c"))
+        if(Input.GetMouseButtonDown(0) && slide_id < size)
         {
-            
-            //Things
-        }*/
+            slides[slide_id].SetActive(false);
+            slides[slide_id+1].SetActive(true);
+            slide_id++;
+        }
+        else if(Input.GetMouseButtonDown(0) && slide_id >= size)
+        {
+            next_scene();
+        }
     }
 }
