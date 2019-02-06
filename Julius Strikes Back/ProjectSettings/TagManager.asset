@@ -6,6 +6,7 @@ TagManager:
   tags:
   - next_slide
   - cutscene_slide
+  - Ground
   layers:
   - Default
   - TransparentFX
