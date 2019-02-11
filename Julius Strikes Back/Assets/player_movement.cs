@@ -18,9 +18,9 @@ public class player_movement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        //Move character
+        //Move_Horizontal character
 
-        controller.Move(horizontal_move, false, false);
-        controller.Move(vertical_move, false, false);
+        controller.Move_Horizontal(horizontal_move, false, false);
+        controller.Move_Vertical(vertical_move, false, false);
     }
 }
