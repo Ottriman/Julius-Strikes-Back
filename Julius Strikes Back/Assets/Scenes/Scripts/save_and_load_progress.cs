@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -27,6 +28,8 @@ public static class save_and_load_progress {
 
             player_data data = formatter.Deserialize(stream) as player_data;
             stream.Close();
+
+            SceneManager.LoadScene(data.level+1);
 
             return data;
         }

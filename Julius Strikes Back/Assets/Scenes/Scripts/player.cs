@@ -20,13 +20,14 @@ public class player : MonoBehaviour {
         if(data.file_name == null)
         {
             Debug.LogError("file doesn't exist");
+            return;
         }
         else
         {
             level = data.level;
             crosses = data.crosses_smashed;
             file_name = data.file_name;
-        }
+        } 
 
         Debug.Log("Tried to load " + file_name);
     }
