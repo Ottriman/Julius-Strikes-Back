@@ -5,6 +5,7 @@ using UnityEngine;
 public class player : MonoBehaviour {
 
     public int level = 0;
+    public int num_players = 1;
     public int crosses = 0;
     public string file_name;
     
@@ -26,6 +27,7 @@ public class player : MonoBehaviour {
         {
             level = data.level;
             crosses = data.crosses_smashed;
+            num_players = data.ceasars;
             file_name = data.file_name;
         } 
 

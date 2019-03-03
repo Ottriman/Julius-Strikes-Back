@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Game_manager : MonoBehaviour {
-
+ 
+    public GameObject InGameMenu;
     public GameObject save1;
     public GameObject save2;
     public GameObject save3;
@@ -12,6 +13,8 @@ public class Game_manager : MonoBehaviour {
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this.InGameMenu);
         DontDestroyOnLoad(this.save1);
         DontDestroyOnLoad(this.save2);
         DontDestroyOnLoad(this.save3);
@@ -25,6 +28,15 @@ public class Game_manager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(Input.GetKeyUp("escape") && InGameMenu.activeSelf == false)
+        {
+            InGameMenu.SetActive(true);
+        }
+        else if (Input.GetKeyUp("escape") && InGameMenu.activeSelf == true)
+        {
+            InGameMenu.SetActive(false);
+        }
 		
 	}
 }
